@@ -1,0 +1,59 @@
+/* styles.css - simple responsive layout */
+:root{
+    --bg:#f6f8fb;
+    --card:#fff;
+    --accent:#1f6feb;
+    --muted:#6b7280;
+    --danger:#e11d48;
+    --sidebar:#0f1724;
+    --text:#0b1220;
+    --radius:10px;
+    --shadow: 0 6px 18px rgba(12, 18, 30, 0.08);
+    font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-size:15px;line-height:1.45}
+
+/* auth page */
+.auth-page{display:flex;height:100vh;align-items:center;justify-content:center}
+.auth-container{width:100%;max-width:420px;padding:24px}
+.card{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);padding:20px}
+.auth-card h1{margin:0 0 6px;font-size:22px}
+.auth-card .muted{color:var(--muted);margin-bottom:12px}
+label{display:block;margin-bottom:12px;font-weight:600;color:#333}
+input{width:100%;padding:10px;border:1px solid #e6e9ee;border-radius:8px;font-size:14px;margin-top:6px}
+.btn{background:var(--accent);color:#fff;border:none;padding:10px 14px;border-radius:8px;cursor:pointer;margin-top:10px}
+.errors{margin-bottom:10px}
+.error{background:#fff2f2;border:1px solid #ffd2d2;color:#7a1111;padding:8px;border-radius:8px}
+
+/* layout for app */
+.app{display:flex;min-height:100vh}
+.sidebar{width:220px;background:var(--sidebar);color:#fff;padding:18px;display:flex;flex-direction:column;gap:18px}
+.brand{font-weight:700;font-size:18px}
+.profile small{display:block;color:#cbd5e1}
+nav ul{list-style:none;padding:0;margin:0}
+nav li{margin:8px 0}
+nav a{color:#cbd5e1;text-decoration:none;display:block;padding:8px;border-radius:6px}
+nav a:hover{background:rgba(255,255,255,0.04)}
+nav a.danger{color:var(--danger)}
+
+.sidebar-toggle{display:none;margin-top:auto;background:transparent;border:none;color:#fff;cursor:pointer}
+
+/* main area */
+.main{flex:1;padding:20px}
+.topbar{display:flex;align-items:center;justify-content:space-between}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:16px}
+.card-sm{padding:18px;text-align:center}
+.card p.big{font-size:28px;margin:8px 0;color:var(--accent);font-weight:700}
+.card .actions a{display:inline-block;margin-right:8px;text-decoration:none;padding:8px 12px;border-radius:8px;background:#eef6ff;color:var(--accent)}
+
+.footer{margin-top:32px;color:var(--muted)}
+
+/* responsive */
+@media(max-width:800px){
+    .sidebar{position:fixed;left:-100%;top:0;height:100%;z-index:40;transition:left .25s}
+    .sidebar.open{left:0}
+    .sidebar-toggle{display:block}
+    .main{padding:12px}
+}
