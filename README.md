@@ -37,4 +37,51 @@ This project mirrors what a software engineer might build in small company syste
 | Database | MySQL (via phpMyAdmin) |
 | Frontend | HTML5, CSS3, JavaScript |
 | Server | Apache (via XAMPP) |
+
+
+2. Import the SQL file:
+- Open [http://localhost/phpmyadmin](http://localhost/phpmyadmin)
+- Create a database named `staff_dashboard`
+- Import `/sql/staff_dashboard.sql`
+
+3. Update your database credentials in `config/db.php` if needed:
+```php
+$host = 'localhost';
+$db   = 'staff_dashboard';
+$user = 'root';
+$pass = '';
+
+Future Improvements
+
+Switch from MD5 to bcrypt for stronger password hashing
+
+Add registration and forgot-password pages
+
+Include role-based dashboard views (e.g., Admin view vs Staff view)
+
+Integrate AJAX for smoother interactions
+
+Use environment variables (.env) for configuration
+
+Implement REST APIs and JWT-based authentication
+
+🧠 Author’s Note
+
+This project was developed as a learning exercise to understand the core business logic of backend systems — particularly:
+
+How authentication flows work in real environments
+
+How to structure code for scalability and maintainability
+
+How PHP interacts with MySQL via PDO
+
+How to debug logical errors efficiently
+
+By building this project from scratch, developers strengthen not only their PHP syntax but also their problem-solving mindset as software engineers.
+
+🧑‍💻 Author
+
+Dennis Kinyua
+Software Engineer | Backend Developer | Python & PHP Enthusiast
+📧 kinyuadenno1@gmail.com
 | Database Library | PDO (PHP Data Objects) |
